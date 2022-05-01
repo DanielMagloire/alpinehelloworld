@@ -100,13 +100,6 @@ pipeline {
               heroku container:release -a $PRODUCTION web
             '''
           }
-       }
-       post {
-          always {
-               script {
-                    slackNotifier currentBuild.result
-               }
-          }  
       }
     }
   }
